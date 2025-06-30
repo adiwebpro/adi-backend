@@ -17,7 +17,7 @@ let projects = [
     title: "E-commerce Website",
     description: "A full-featured online store with cart functionality",
     technologies: ["React", "Node.js", "MongoDB"],
-    imageUrl: "https://img.freepik.com/vektor-premium/desain-logo-e-commerce_624194-152.jpg?w=740",
+    imageUrl: "https://via.placeholder.com/400x225?text=E-commerce",
     liveUrl: "https://example.com"
   },
   {
@@ -25,8 +25,7 @@ let projects = [
     title: "Task Management App",
     description: "Kanban-style task organizer with drag-and-drop",
     technologies: ["Vue.js", "Firebase"],
-    imageUrl: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/e-commerce-logo%2Conline-store-logo%2Ccart-logo-design-template-9b5e4319f7f69b92d7421a048ce90dcb_screen.jpg?ts=1662916038
-",
+    imageUrl: "https://via.placeholder.com/400x225?text=Task+App",
     liveUrl: "https://example.com"
   }
 ];
