@@ -17,7 +17,7 @@ let projects = [
     title: "E-commerce Website",
     description: "A full-featured online store with cart functionality",
     technologies: ["React", "Node.js", "MongoDB"],
-    imageUrl: "https://via.placeholder.com/400x225?text=E-commerce",
+    imageUrl: "https://img.freepik.com/vektor-premium/desain-logo-e-commerce_624194-152.jpg?w=740",
     liveUrl: "https://example.com"
   },
   {
@@ -25,7 +25,7 @@ let projects = [
     title: "Task Management App",
     description: "Kanban-style task organizer with drag-and-drop",
     technologies: ["Vue.js", "Firebase"],
-    imageUrl: "https://via.placeholder.com/400x225?text=Task+App",
+    imageUrl: "https://img.freepik.com/vektor-premium/desain-logo-e-commerce_624194-152.jpg?w=740",
     liveUrl: "https://example.com"
   }
 ];
