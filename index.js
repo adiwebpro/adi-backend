@@ -1,4 +1,3 @@
-// Backend/index.js
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -6,24 +5,24 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Enable CORS and body parsing
+// Aktifkan CORS dan parsing body JSON
 app.use(cors());
 app.use(bodyParser.json());
 
-// In-memory data storage
+// Penyimpanan data sementara (in-memory)
 let projects = [
   {
     id: 1,
-    title: "E-commerce Website",
-    description: "A full-featured online store with cart functionality",
+    title: "Website E-commerce",
+    description: "Toko online lengkap dengan fitur keranjang belanja",
     technologies: ["React", "Node.js", "MongoDB"],
     imageUrl: "https://img.freepik.com/vektor-premium/desain-logo-e-commerce_624194-152.jpg?w=740",
     liveUrl: "https://example.com"
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Kanban-style task organizer with drag-and-drop",
+    title: "Aplikasi Manajemen Tugas",
+    description: "Pengelola tugas model kanban dengan fitur drag-and-drop",
     technologies: ["Vue.js", "Firebase"],
     imageUrl: "https://img.freepik.com/vektor-premium/desain-logo-e-commerce_624194-152.jpg?w=740",
     liveUrl: "https://example.com"
@@ -32,20 +31,79 @@ let projects = [
 
 let messages = [];
 
-// API Routes
-// Get all projects
+// === Route utama dengan tampilan HTML indah ===
+app.get('/', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="id">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Portofolio API</title>
+      <style>
+        body {
+          margin: 0;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background: linear-gradient(to right, #4e54c8, #8f94fb);
+          color: white;
+          text-align: center;
+          padding: 60px 20px;
+        }
+        h1 {
+          font-size: 2.8rem;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 1.2rem;
+          margin-bottom: 30px;
+        }
+        a {
+          background: white;
+          color: #4e54c8;
+          padding: 12px 24px;
+          text-decoration: none;
+          border-radius: 6px;
+          font-weight: bold;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        a:hover {
+          background: #f0f0f0;
+        }
+        footer {
+          margin-top: 50px;
+          font-size: 0.9rem;
+          color: rgba(255,255,255,0.8);
+        }
+      </style>
+    </head>
+    <body>
+      <h1>🚀 API Portofolio</h1>
+      <p>Selamat datang di backend API untuk data proyek portofolio Anda.</p>
+      <a href="/api/projects">Lihat Semua Proyek</a>
+
+      <footer>
+        <p>&copy; ${new Date().getFullYear()} Bagus Adi Suratno</p>
+      </footer>
+    </body>
+    </html>
+  `);
+});
+
+// Rute API
+
+// Ambil semua proyek
 app.get('/api/projects', (req, res) => {
   res.json(projects);
 });
 
-// Get single project
+// Ambil satu proyek berdasarkan ID
 app.get('/api/projects/:id', (req, res) => {
   const project = projects.find(p => p.id === parseInt(req.params.id));
-  if (!project) return res.status(404).json({ message: 'Project not found' });
+  if (!project) return res.status(404).json({ message: 'Proyek tidak ditemukan' });
   res.json(project);
 });
 
-// Create new project
+// Tambah proyek baru
 app.post('/api/projects', (req, res) => {
   const newProject = {
     id: projects.length + 1,
@@ -59,10 +117,10 @@ app.post('/api/projects', (req, res) => {
   res.status(201).json(newProject);
 });
 
-// Update project
+// Perbarui proyek
 app.put('/api/projects/:id', (req, res) => {
   const project = projects.find(p => p.id === parseInt(req.params.id));
-  if (!project) return res.status(404).json({ message: 'Project not found' });
+  if (!project) return res.status(404).json({ message: 'Proyek tidak ditemukan' });
   
   project.title = req.body.title || project.title;
   project.description = req.body.description || project.description;
@@ -73,27 +131,27 @@ app.put('/api/projects/:id', (req, res) => {
   res.json(project);
 });
 
-// Delete project
+// Hapus proyek
 app.delete('/api/projects/:id', (req, res) => {
   const projectIndex = projects.findIndex(p => p.id === parseInt(req.params.id));
-  if (projectIndex === -1) return res.status(404).json({ message: 'Project not found' });
+  if (projectIndex === -1) return res.status(404).json({ message: 'Proyek tidak ditemukan' });
   
   projects = projects.filter(p => p.id !== parseInt(req.params.id));
-  res.json({ message: 'Project deleted' });
+  res.json({ message: 'Proyek berhasil dihapus' });
 });
 
-// Handle contact form submissions
+// Tangani form kontak
 app.post('/api/contact', (req, res) => {
   const { name, email, message } = req.body;
   if (!name || !email || !message) {
-    return res.status(400).json({ message: 'All fields are required' });
+    return res.status(400).json({ message: 'Semua kolom wajib diisi' });
   }
-  
+
   messages.push({ name, email, message, date: new Date() });
-  res.status(201).json({ message: 'Message received successfully' });
+  res.status(201).json({ message: 'Pesan berhasil diterima' });
 });
 
-// Start server
+// Jalankan server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server berjalan di port ${PORT}`);
 });
