@@ -13,19 +13,19 @@ app.use(bodyParser.json());
 let projects = [
   {
     id: 1,
-    title: "Website E-commerce",
-    description: "Toko online lengkap dengan fitur keranjang belanja",
-    technologies: ["React", "Node.js", "MongoDB"],
+    title: "Website Scraper Ulasan Google Play Store",
+    description: "Sebuah web yang digunakan untuk mengambil data ulasan di playstore",
+    technologies: ["Phyton"],
     imageUrl: "https://img.freepik.com/vektor-premium/desain-logo-e-commerce_624194-152.jpg?w=740",
-    liveUrl: "https://example.com"
+    liveUrl: "https://zaky2.pythonanywhere.com/"
   },
   {
     id: 2,
-    title: "Aplikasi Manajemen Tugas",
-    description: "Pengelola tugas model kanban dengan fitur drag-and-drop",
+    title: "CRUD Mahasiswa",
+    description: "crud",
     technologies: ["Vue.js", "Firebase"],
-    imageUrl: "https://img.freepik.com/vektor-premium/desain-logo-e-commerce_624194-152.jpg?w=740",
-    liveUrl: "https://example.com"
+    imageUrl: "https://freeimage.host/i/F7LLRHb",
+    liveUrl: "https://crud-mahasiswa-react.vercel.app/"
   }
 ];
 
