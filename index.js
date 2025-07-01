@@ -78,7 +78,7 @@ app.get('/', (req, res) => {
     </head>
     <body>
       <h1>🚀 API Portofolio</h1>
-      <p>Selamat datang di backend API untuk data proyek portofolio Anda.</p>
+      <p>Selamat datang di backend API untuk data proyek portofolio Saya.</p>
       <a href="/api/projects">Lihat Semua Proyek</a>
 
       <footer>
