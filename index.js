@@ -16,7 +16,7 @@ let projects = [
     title: "Website Scraper Ulasan Google Play Store",
     description: "Sebuah web yang digunakan untuk mengambil data ulasan di playstore",
     technologies: ["Phyton"],
-    imageUrl: "https://img.freepik.com/vektor-premium/desain-logo-e-commerce_624194-152.jpg?w=740",
+    imageUrl: "https://freeimage.host/i/F7LLRHb",
     liveUrl: "https://zaky2.pythonanywhere.com/"
   },
   {
@@ -24,7 +24,7 @@ let projects = [
     title: "CRUD Mahasiswa",
     description: "crud",
     technologies: ["Vue.js", "Firebase"],
-    imageUrl: "https://freeimage.host/i/F7LLRHb",
+    imageUrl: "https://freeimage.host/i/F7LL5Rj",
     liveUrl: "https://crud-mahasiswa-react.vercel.app/"
   }
 ];
