@@ -31,7 +31,7 @@ let projects = [
 
 let messages = [];
 
-// 🌐 Tampilan halaman utama
+// === Route utama dengan tampilan HTML indah ===
 app.get('/', (req, res) => {
   res.send(`
     <!DOCTYPE html>
@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>API Portofolio</title>
+      <title>Portofolio API</title>
       <style>
         body {
           margin: 0;
@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
         }
         p {
           font-size: 1.2rem;
-          margin-bottom: 20px;
+          margin-bottom: 30px;
         }
         a {
           background: white;
@@ -69,14 +69,8 @@ app.get('/', (req, res) => {
         a:hover {
           background: #f0f0f0;
         }
-        img {
-          margin-top: 30px;
-          max-width: 200px;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
         footer {
-          margin-top: 40px;
+          margin-top: 50px;
           font-size: 0.9rem;
           color: rgba(255,255,255,0.8);
         }
@@ -84,10 +78,8 @@ app.get('/', (req, res) => {
     </head>
     <body>
       <h1>🚀 API Portofolio</h1>
-      <p>Selamat datang di backend API untuk proyek portofolio Anda.</p>
+      <p>Selamat datang di backend API untuk data proyek portofolio Anda.</p>
       <a href="/api/projects">Lihat Semua Proyek</a>
-
-      <img src="https://drive.google.com/uc?export=view&id=1ChaGBQHEpniFR8pdFFKVqnSlLDnXf9FA" alt="Foto Profil" />
 
       <footer>
         <p>&copy; ${new Date().getFullYear()} Bagus Adi Suratno</p>
@@ -97,7 +89,9 @@ app.get('/', (req, res) => {
   `);
 });
 
-// 🎯 Rute API: Ambil semua proyek
+// Rute API
+
+// Ambil semua proyek
 app.get('/api/projects', (req, res) => {
   res.json(projects);
 });
@@ -127,26 +121,26 @@ app.post('/api/projects', (req, res) => {
 app.put('/api/projects/:id', (req, res) => {
   const project = projects.find(p => p.id === parseInt(req.params.id));
   if (!project) return res.status(404).json({ message: 'Proyek tidak ditemukan' });
-
+  
   project.title = req.body.title || project.title;
   project.description = req.body.description || project.description;
   project.technologies = req.body.technologies || project.technologies;
   project.imageUrl = req.body.imageUrl || project.imageUrl;
   project.liveUrl = req.body.liveUrl || project.liveUrl;
-
+  
   res.json(project);
 });
 
 // Hapus proyek
 app.delete('/api/projects/:id', (req, res) => {
-  const index = projects.findIndex(p => p.id === parseInt(req.params.id));
-  if (index === -1) return res.status(404).json({ message: 'Proyek tidak ditemukan' });
-
-  projects.splice(index, 1);
+  const projectIndex = projects.findIndex(p => p.id === parseInt(req.params.id));
+  if (projectIndex === -1) return res.status(404).json({ message: 'Proyek tidak ditemukan' });
+  
+  projects = projects.filter(p => p.id !== parseInt(req.params.id));
   res.json({ message: 'Proyek berhasil dihapus' });
 });
 
-// Kirim pesan kontak
+// Tangani form kontak
 app.post('/api/contact', (req, res) => {
   const { name, email, message } = req.body;
   if (!name || !email || !message) {
@@ -159,5 +153,5 @@ app.post('/api/contact', (req, res) => {
 
 // Jalankan server
 app.listen(PORT, () => {
-  console.log(`✅ Server berjalan di http://localhost:${PORT}`);
+  console.log(`Server berjalan di port ${PORT}`);
 });
