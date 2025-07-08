@@ -16,17 +16,25 @@ let projects = [
     title: "Website Scraper Ulasan Google Play Store",
     description: "Sebuah web yang digunakan untuk mengambil data ulasan di playstore",
     technologies: ["Phyton"],
-    imageUrl: "https://iili.io/F7LLRHb.png",
+    imageUrl: "https://raw.githubusercontent.com/adiwebpro/adi-backend/main/02.jpg",
     liveUrl: "https://zaky2.pythonanywhere.com/"
   },
   {
     id: 2,
-    title: "CRUD Mahasiswa",
-    description: "crud",
-    technologies: ["Vue.js", "Firebase"],
-    imageUrl: "https://iili.io/F7LL5Rj.png",
-    liveUrl: "https://crud-mahasiswa-react.vercel.app/"
-  }
+    title: "Web LokerPurbalingga",
+    description: "Sebuah web yang dibuat dengan 2 role, admin dan owner usaha dalam membuat sistem info loker",
+    technologies: ["php native", "database mysql"],
+    imageUrl: "https://raw.githubusercontent.com/adiwebpro/adi-backend/main/03.jpg", 
+    liveUrl: "https://lokerpurbalingga.rf.gd/"
+  },
+  {
+    id: 3,
+    title: "PREDIKSI HARGA KAMERA MENGGUNAKAN RANDOM FOREST REGRESSOR",
+    description: "Analisis data (PREPROCESSING)",
+    technologies: ["Phyton", "Google Colab"],
+    imageUrl: "https://raw.githubusercontent.com/adiwebpro/adi-backend/main/01.png", 
+    liveUrl: "https://colab.research.google.com/drive/1inRmyepxeOUgNYBdQJL2f5M8pQDzHUUh?authuser=0#scrollTo=mrTcACS9GCqc"
+  },
 ];
 
 let messages = [];
