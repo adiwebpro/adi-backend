@@ -35,6 +35,14 @@ let projects = [
     imageUrl: "https://raw.githubusercontent.com/adiwebpro/adi-backend/main/01.png", 
     liveUrl: "https://colab.research.google.com/drive/1inRmyepxeOUgNYBdQJL2f5M8pQDzHUUh?authuser=0#scrollTo=mrTcACS9GCqc"
   },
+  {
+    id: 4,
+    title: "Analisis Penjualan Toko Retail",
+    description: "🔧 Tools & Library:Python (Pandas, Matplotlib, Seaborn)Jupyter Notebook Dataset format .csv",
+    technologies: ["Phyton"],
+    imageUrl: "https://raw.githubusercontent.com/adiwebpro/adi-backend/main/04.png",
+    liveUrl: "https://github.com/adiwebpro/retail-sales-analysis"
+  },
 ];
 
 let messages = [];
