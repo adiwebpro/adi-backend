@@ -48,7 +48,7 @@ let projects = [
     title: "NoMark: Unduh Video TikTok, IG & FB Tanpa Watermark",
     description: "Unduh video TikTok, Instagram, dan Facebook tanpa watermark. Bersih, cepat, gratis.",
     technologies: ["PHP Native"],
-    imageUrl: "https://raw.githubusercontent.com/adiwebpro/adi-backend/main/05.png",
+    imageUrl: "https://raw.githubusercontent.com/adiwebpro/adi-backend/main/05.jpg",
     liveUrl: "https://nomark.rf.gd/"
   },
 ];
